@@ -10,8 +10,6 @@ class HelperTest
   include Middleman::Features::Target::HelperMethods
 end
 
-
-
 describe Middleman::Features::Target do
   describe Middleman::Features::Target::ClassMethods do
   end

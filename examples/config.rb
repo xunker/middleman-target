@@ -1,12 +1,11 @@
 require '../lib/target'
 activate :target
 
-build_targets({
+set_build_targets({
   :phonegap => {
     :includes => [:android, :ios]
   }
 })
-
 
 disable :layout
 
