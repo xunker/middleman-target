@@ -1,0 +1,21 @@
+<html>
+  <body>
+    <p>
+      <% if build_target_is?(:foo) %>
+        Foo specific stuff.
+      <% elsif target?(:bar) %>
+        Bar specific stuff.
+      <% else %>
+        The build target <%= build_target %> has no special needs.
+      <% end %>
+    </p>
+
+    <p>
+      <% if default_target? || no_target? %>
+        Using the default build target, or no target specified.
+      <% else %>
+        A build target has been specified that is not the default.
+      <% end %>
+    </p>
+  </body>
+</html>
