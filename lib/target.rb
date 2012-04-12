@@ -33,10 +33,10 @@ module Middleman::Features::Target
 
     def build_target_is?(target_name)
       if build_targets.empty?
-        build_target == target_name.to_sym
+        build_target == target_name
       else
         if !build_targets[target_name.to_s].nil?
-          if (build_targets[target_name.to_s]["includes"] || []).include?(build_target.to_s)
+          if (build_targets[target_name.to_s][:includes] || []).include?(build_target.to_s)
             return true
           end
         end

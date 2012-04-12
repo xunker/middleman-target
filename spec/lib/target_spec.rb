@@ -79,7 +79,7 @@ describe Middleman::Features do
         @base.stub!(:settings).and_return(
           mock('settings', :build_targets => {
             "phonegap" => {
-              "includes" => %w[android ios]
+              :includes => %w[android ios]
             }
           })
         )
@@ -95,7 +95,7 @@ describe Middleman::Features do
         @base.stub!(:settings).and_return(
           mock('settings', :build_targets => {
             "phonegap" => {
-              "includes" => %w[android ios]
+              :includes => %w[android ios]
             }
           })
         )

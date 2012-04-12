@@ -1,6 +1,8 @@
 <html>
   <body>
-    <h1><%= build_target %></h1>
+    <h1>current build target: <%= build_target %></h1>
+    <h4>build target map: <%= build_targets.inspect %></h4>
+
     <p>
       <% if build_target_is?(:foo) %>
         Foo specific stuff.
@@ -8,6 +10,14 @@
         Bar specific stuff.
       <% else %>
         The build target <%= build_target %> has no special needs.
+      <% end %>
+    </p>
+
+    <p>
+      <% if target?(:phonegap) %>
+        Specified target is included in "phonegap" target.
+      <% else %>
+        Specified target is not in "phonegap" target.
       <% end %>
     </p>
 
