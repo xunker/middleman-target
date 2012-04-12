@@ -2,7 +2,7 @@ require 'spec_helper'
 
 module Middleman
   module Features
-    require 'lib/target'
+    require 'lib/middleman-target'
   end
 end
 

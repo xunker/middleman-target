@@ -1,4 +1,4 @@
-require '../lib/target'
+require '../lib/middleman-target'
 activate :target
 
 set_build_targets({
