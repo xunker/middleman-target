@@ -13,7 +13,7 @@ spec = Gem::Specification.new do |s|
     "README.md",
     "examples/config.rb", "examples/source/index.html.erb",
     "lib/target.rb",
-    "spec/spec.opts", "spec/spec_helper.rb", "spec/lib/target-spec.rb"
+    "spec/spec.opts", "spec/spec_helper.rb", "spec/lib/target_spec.rb"
   ]
   s.has_rdoc = false
   s.add_dependency("middleman", "~> 2.0.15")
