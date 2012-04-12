@@ -52,6 +52,10 @@ describe Middleman::Features do
     end
 
     describe '#build_target_is?' do
+      before(:each) do
+        @base.stub!(:settings).and_return(mock('settings', :build_targets => {}))
+      end
+
       it 'should be true if build target matches passed argument' do
         # given
         @base.stub!(:build_target).and_return(:foo)
@@ -59,12 +63,45 @@ describe Middleman::Features do
         # expect
         @base.build_target_is?(:foo).should be_true
       end
+
       it 'should be false if build target does not match passed argument' do
         # given
         @base.stub!(:build_target).and_return(:bar)
 
         # expect
         @base.build_target_is?(:foo).should be_false
+      end
+
+      it 'should be true if build_targets defines a target that "includes" this target' do
+        # given
+        @base.stub!(:build_target).and_return(:android)
+
+        @base.stub!(:settings).and_return(
+          mock('settings', :build_targets => {
+            "phonegap" => {
+              "includes" => %w[android ios]
+            }
+          })
+        )
+
+        # expect
+        @base.build_target_is?(:phonegap).should be_true
+      end
+
+      it 'should be false if build_targets is defined but does "include" target in any definition' do
+        # given
+        @base.stub!(:build_target).and_return(:winmo6)
+
+        @base.stub!(:settings).and_return(
+          mock('settings', :build_targets => {
+            "phonegap" => {
+              "includes" => %w[android ios]
+            }
+          })
+        )
+
+        # expect
+        @base.build_target_is?(:phonegap).should be_false
       end
     end
 
@@ -88,6 +125,9 @@ describe Middleman::Features do
     end
 
     describe '#build_target' do
+      before(:each) do
+        @base.stub!(:settings).and_return(mock('settings', :build_targets => {}))
+      end
       it 'should return the specified build target if one was given' do
         # given
         ENV['MIDDLEMAN_BUILD_TARGET'] = 'something'

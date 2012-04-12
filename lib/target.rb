@@ -18,6 +18,11 @@ module Middleman::Features::Target
 
   module HelperMethods
     DEFAULT_BUILD_TARGET = :default
+
+    def build_targets
+      @build_target ||= settings.build_targets
+    end
+
     def build_target
       @middleman_build_target ||= if ENV['MIDDLEMAN_BUILD_TARGET']
         ENV['MIDDLEMAN_BUILD_TARGET'].downcase.to_sym
@@ -27,7 +32,16 @@ module Middleman::Features::Target
     end
 
     def build_target_is?(target_name)
-      build_target == target_name.to_sym
+      if build_targets.empty?
+        build_target == target_name.to_sym
+      else
+        if !build_targets[target_name.to_s].nil?
+          if (build_targets[target_name.to_s]["includes"] || []).include?(build_target.to_s)
+            return true
+          end
+        end
+        return false
+      end
     end
     alias :target? :build_target_is?
 
