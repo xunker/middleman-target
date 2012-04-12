@@ -73,6 +73,7 @@ To build the target of "aardvark" you would run:
 
 # TODO:
 
+* write rdoc
 * set build target on the command line as "middleman build TARGET"
 * use app.set instead of always reading ENV for build target
 * not allowed to use a build target from the command line if that build_target if specified as a first-order entry in set_build_targets()
