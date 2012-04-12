@@ -73,7 +73,7 @@ To build the target of "aardvark" you would run:
 
 # TODO:
 
-* set build target on the command line as "middleman build <target>"
+* set build target on the command line as "middleman build TARGET"
 * use app.set instead of always reading ENV for build target
 * not allowed to use a build target from the command line if that build_target if specified as a first-order entry in set_build_targets()
 
@@ -90,4 +90,4 @@ Because gem authors don't specify minimal and maximal version of dependencies, i
     gem install middleman -v="2.0.15"
     gem install middleman-target
 
-[MIDDLEMAN]: https://github.com/middleman/middleman/blob/master/LICENSE
+[MIDDLEMAN]: https://github.com/middleman/middleman/
