@@ -6,17 +6,49 @@ module Middleman
   end
 end
 
-class HelperTest
+class HelperMethodTest
   include Middleman::Features::Target::HelperMethods
 end
 
-describe Middleman::Features::Target do
+class ClassMethodTest
+  include Middleman::Features::Target::ClassMethods
+end
+
+###
+
+describe Middleman::Features do
+  describe Middleman::Features::Target do
+    describe '.registered' do
+      pending "Not sure how to test this guy"
+    end
+  end
+
   describe Middleman::Features::Target::ClassMethods do
+    before(:each) do
+      @base = ClassMethodTest.new
+    end
+
+    describe '#set_build_targets' do
+      it 'should set the build_targets setting to be the passed value' do
+        # expect
+        @base.stub!(:settings).and_return(mock('settings'))
+        @base.settings.should_receive(:build_targets=).once.with({:foo => 'bar'})
+
+        # when
+        @base.set_build_targets({:foo => 'bar'})
+      end
+
+      it 'should only accept hashes as arguments' do
+        lambda {
+          @base.set_build_targets('string')
+        }.should raise_error(RuntimeError)
+      end
+    end
   end
 
   describe Middleman::Features::Target::HelperMethods do
     before(:each) do
-      @base = HelperTest.new
+      @base = HelperMethodTest.new
     end
 
     describe '#build_target_is?' do

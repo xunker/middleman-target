@@ -11,6 +11,7 @@ module Middleman::Features::Target
 
   module ClassMethods
     def set_build_targets(targets={})
+      raise "#set_build_targets() argument must be a hash" unless targets.class == Hash
       settings.build_targets = targets
     end
   end
