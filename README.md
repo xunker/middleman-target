@@ -82,6 +82,20 @@ To build the target of "aardvark" you would run:
 
 Middleman-Target was developed against [MIDDLEMAN] 2.0.15. Compatibility with other versions is not guaranteed.  When Middleman 3.0 is released this will likely not work with it.
 
+## Installing in to Middleman tree
+
+Add the following near the top of your config.rb:
+
+    require 'rubygems' # may not be needed depending on ruby ver
+    require 'middleman-target'
+    activate :target
+
+To specify a build target map add a:
+
+    set_build_targets({ ... })
+
+..call somewhere in there (not in the 'configure' block though).
+
 ## Gem Version Hell
 
 Because gem authors don't specify minimal and maximal version of dependencies, installing Middleman 2.0.15 can put you in dependency version hell.  To rememdy this, install gems in this order:
