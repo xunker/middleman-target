@@ -99,7 +99,7 @@ To specify a build target map add a:
 
 ## Gem Version Hell
 
-Because gem authors don't specify minimal and maximal version of dependencies, installing Middleman 2.0.15 can put you in dependency version hell.  To rememdy this, install gems in this order:
+Because some gem authors don't specify minimal and maximal version of dependencies, installing Middleman 2.0.15 can put you in dependency version hell (this is not the fault of Middleman directly, the problem is several dependencies below).  To rememdy this, install gems in this order:
 
     gem install multi_json -v="1.0.3"
     gem install execjs -v="1.2.7"
