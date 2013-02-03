@@ -16,6 +16,6 @@ spec = Gem::Specification.new do |s|
     "spec/spec.opts", "spec/spec_helper.rb", "spec/lib/middleman-target_spec.rb"
   ]
   s.has_rdoc = false
-  s.add_dependency("middleman", "~> 2.0.15")
+  s.add_dependency("middleman", "~> 3.0.11")
   s.add_development_dependency('rspec', '~> 2.9.0')
 end
