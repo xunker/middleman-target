@@ -1,4 +1,4 @@
-module Middleman::Features::Target
+module Target
 
   class << self
     def registered(app)
@@ -51,3 +51,5 @@ module Middleman::Features::Target
     alias :no_target? :default_target?
   end
 end
+
+::Middleman::Extensions.register(:target, Target)
