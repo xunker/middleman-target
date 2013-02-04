@@ -1,13 +1,13 @@
-require '../lib/middleman-target'
-activate :target
+require 'middleman-target'
+activate :target do |target|
 
-set_build_targets({
-  "phonegap" => {
-    :includes => %w[android ios]
+  target.build_targets = {
+    "phonegap" => {
+      :includes => %w[android ios]
+    }
   }
-})
 
-disable :layout
+end
 
 configure :build do
 

@@ -1,6 +1,6 @@
 # Middleman-Target
 
-Middleman-Target is an extension to [MIDDLEMAN] 2.0.x to allow you to specify a build target and generate the content accordingly.
+Middleman-Target is an extension to [MIDDLEMAN] 3.0.x to allow you to specify a build target and generate the content accordingly.
 
 You can use Middleman-Target in your Middleman project to build multiple versions of your source from one source tree.
 
@@ -41,11 +41,13 @@ If you wanted a particular condition to apply to more than one target you may do
 
 ..but that can get ugly.  Instead we have the concept of "build target maps".  They are declared in the config.rb:
 
-    set_build_targets({
-      "phonegap" => {
-        :includes => %w[android ios]
+    active :target do |t|
+      t.build_targets = {
+        "phonegap" => {
+          :includes => %w[android ios]
+        }
       }
-    })
+    end
 
 ..this means that if my current built target is "android", a query like:
 
@@ -73,7 +75,9 @@ To build the target of "aardvark" you would run:
 
 # TODO:
 
+* repace target.build_targets with something more extensible
 * write rdoc
+* write cucumber features (Middleman 3 standard is for cuckes, not rspec)
 * validate the hash passed in to set_build_targets()
 * set build target on the command line as "middleman build TARGET"
 * use app.set instead of always reading ENV for build target
@@ -81,7 +85,7 @@ To build the target of "aardvark" you would run:
 
 # REQUIREMENTS AND INSTALLATION
 
-Middleman-Target was developed against [MIDDLEMAN] 2.0.15. Compatibility with other versions is not guaranteed.  When Middleman 3.0 is released this will likely not work with it.
+This new version is for [MIDDLEMAN] 3.0.x ONLY. For compatibility with Middleman 2.0.x, please see version 0.0.1 of this gem.
 
 ## Installing in to Middleman tree
 
@@ -91,19 +95,18 @@ Add the following near the top of your config.rb:
     require 'middleman-target'
     activate :target
 
-To specify a build target map add a:
+To specify a build target map, pass a block in to the "active" method as:
 
-    set_build_targets({ ... })
+    active :target do |t|
+      t.build_targets = { ... }
+    end
 
-..call somewhere in there (not in the 'configure' block though).
+Please see /examples for a working usage example.
 
-## Gem Version Hell
+# Misc
 
-Because some gem authors don't specify minimal and maximal version of dependencies, installing Middleman 2.0.15 can put you in dependency version hell (this is not the fault of Middleman directly, the problem is several dependencies below).  To rememdy this, install gems in this order:
+The middleman-target gem is Copyright 2012-2013 Matthew Nielsen, distributed under the MIT License.
 
-    gem install multi_json -v="1.0.3"
-    gem install execjs -v="1.2.7"
-    gem install middleman -v="2.0.15"
-    gem install middleman-target
+Thanks to jtwalters@github for patches and motivation to add Middleman 3 compatibility.
 
 [MIDDLEMAN]: https://github.com/middleman/middleman/
