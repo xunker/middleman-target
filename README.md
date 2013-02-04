@@ -102,6 +102,18 @@ To specify a build target map, pass a block in to the "active" method as:
 
 Please see /examples for a working usage example.
 
+# Contributing
+
+If there is any thing you'd like to contribute or fix, please:
+
+  * Fork the repo
+  * Make your changes
+  * Add Cucumber tests for any new functionality
+  * Verify all existing tests work properly
+  * Make a pull request
+
+The Cucumber features for this project assume the gem is installed, so to make any changes you will need to build and install the gem locally with your changes.
+
 # Misc
 
 The middleman-target gem is Copyright 2012-2013 Matthew Nielsen, distributed under the MIT License.

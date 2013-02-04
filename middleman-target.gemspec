@@ -15,7 +15,22 @@ spec = Gem::Specification.new do |s|
     "lib/middleman-target/extension.rb",
     "lib/middleman-target.rb",
     "lib/middleman_extension.rb",
-    "spec/spec.opts", "spec/spec_helper.rb", "spec/lib/middleman-target/extension_spec.rb"
+
+    "fixtures/build_target/config.rb",
+    "fixtures/build_target/source/build_target.html.erb",
+
+    "fixtures/build_target_default/config.rb",
+    "fixtures/build_target_default/source/build_target_default.html.erb",
+
+    "fixtures/build_target_includes/config.rb",
+    "fixtures/build_target_includes/source/build_target_includes.html.erb",
+
+    "fixtures/build_targets/config.rb",
+    "fixtures/build_targets/source/build_targets.html.erb",
+
+    "features/support/env.rb",
+    "features/target.feature"
+
   ]
   s.has_rdoc = false
   s.add_dependency("middleman", "~> 3.0.11")
