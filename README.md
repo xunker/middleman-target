@@ -77,7 +77,6 @@ To build the target of "aardvark" you would run:
 
 * repace target.build_targets with something more extensible
 * write rdoc
-* write cucumber features (Middleman 3 standard is for cuckes, not rspec)
 * validate the hash passed in to set_build_targets()
 * set build target on the command line as "middleman build TARGET"
 * use app.set instead of always reading ENV for build target
