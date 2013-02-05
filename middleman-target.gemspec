@@ -2,7 +2,7 @@ require 'rubygems'
 
 spec = Gem::Specification.new do |s|
   s.name = "middleman-target"
-  s.version = "0.0.3"
+  s.version = "0.0.4"
   s.date = %q{2013-02-04}
   s.author = "Matthew Nielsen"
   s.email = "xunker@pyxidis.org"

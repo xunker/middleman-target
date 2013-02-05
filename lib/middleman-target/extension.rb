@@ -28,6 +28,8 @@ module Middleman
         if options.build_targets
           raise "#build_targets must be a hash" unless options.build_targets.class == Hash
           app.set :build_target_definitions, options.build_targets
+        else
+          app.set :build_target_definitions, {}
         end
       end
       alias :included :registered
