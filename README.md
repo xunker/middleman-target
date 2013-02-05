@@ -41,7 +41,7 @@ If you wanted a particular condition to apply to more than one target you may do
 
 ..but that can get ugly.  Instead we have the concept of "build target maps".  They are declared in the config.rb:
 
-    active :target do |t|
+    activate :target do |t|
       t.build_targets = {
         "phonegap" => {
           :includes => %w[android ios]
@@ -94,9 +94,9 @@ Add the following near the top of your config.rb:
     require 'middleman-target'
     activate :target
 
-To specify a build target map, pass a block in to the "active" method as:
+To specify a build target map, pass a block in to the "activate" method as:
 
-    active :target do |t|
+    activate :target do |t|
       t.build_targets = { ... }
     end
 
