@@ -1,6 +1,6 @@
 # Middleman-Target
 
-Middleman-Target is an extension to [MIDDLEMAN] 3.0.x to allow you to specify a build target and generate the content accordingly.
+Middleman-Target is an extension to [MIDDLEMAN] 3.0.x/3.1.x to allow you to specify a build target and generate the content accordingly.
 
 You can use Middleman-Target in your Middleman project to build multiple versions of your source from one source tree.
 
