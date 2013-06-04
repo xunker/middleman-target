@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/xunker/middleman-target.png?branch=master)](https://travis-ci.org/xunker/middleman-target)
+
 # Middleman-Target
 
 Middleman-Target is an extension to [MIDDLEMAN] 3.0.x/3.1.x to allow you to specify a build target and generate the content accordingly.
