@@ -2,7 +2,7 @@ require 'rubygems'
 
 spec = Gem::Specification.new do |s|
   s.name = "middleman-target"
-  s.version = "0.0.4"
+  s.version = "0.0.5"
   s.date = %q{2013-02-04}
   s.author = "Matthew Nielsen"
   s.email = "xunker@pyxidis.org"
@@ -33,7 +33,7 @@ spec = Gem::Specification.new do |s|
 
   ]
   s.has_rdoc = false
-  s.add_dependency("middleman", "~> 3.0.11")
+  s.add_dependency("middleman", ">= 3.0", "< 3.2")
 
   s.add_development_dependency('cucumber', "~> 1.1.0")
   s.add_development_dependency("aruba", "~> 0.4.11")
