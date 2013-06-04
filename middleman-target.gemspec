@@ -35,6 +35,7 @@ spec = Gem::Specification.new do |s|
   s.has_rdoc = false
   s.add_dependency("middleman", ">= 3.0", "< 3.2")
 
+  s.add_development_dependency('rake', '~>10.0.4')
   s.add_development_dependency('cucumber', "~> 1.1.0")
   s.add_development_dependency("aruba", "~> 0.4.11")
   s.add_development_dependency('rspec', '~> 2.12.0')
