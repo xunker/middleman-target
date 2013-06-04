@@ -84,7 +84,7 @@ To build the target of "aardvark" you would run:
 
 # REQUIREMENTS AND INSTALLATION
 
-This new version is for [MIDDLEMAN] 3.0.x ONLY. For compatibility with Middleman 2.0.x, please see version 0.0.1 of this gem.
+This new version is for [MIDDLEMAN] 3.0.x and 3.1.x ONLY. For compatibility with Middleman 2.0.x, please see version 0.0.1 of this gem.
 
 ## Installing in to Middleman tree
 
