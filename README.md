@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/xunker/middleman-target.png?branch=master)](https://travis-ci.org/xunker/middleman-target)
+[![Code Climate](https://codeclimate.com/github/xunker/middleman-target.png)](https://codeclimate.com/github/xunker/middleman-target)
 
 # Middleman-Target
 
