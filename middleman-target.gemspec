@@ -62,7 +62,7 @@ spec = Gem::Specification.new do |s|
       s.post_install_message = <<EOF
 Notice: This version of middleman-target has only been tested with
         middleman 3.2.0 and lower, you are using #{current_middleman_version}. It will probably
-        work just fine, but if it doesn't please file an issue at on the
+        work just fine, but if it doesn't please file an issue on the
         Github page at https://github.com/xunker/middleman-target
 
 EOF
