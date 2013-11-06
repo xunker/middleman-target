@@ -32,7 +32,13 @@ spec = Gem::Specification.new do |s|
 
   ]
   s.has_rdoc = false
+  
   s.add_dependency("middleman", ">= 3.0")
+
+  if (RUBY_ENGINE.to_s == "rbx" && RUBY_VERSION >= "2.1.0")
+    # for rbx-19mode, needed for the Gem::Specification.detect call below.
+    s.add_dependency('rubysl') 
+  end
 
   s.add_development_dependency('rake', '~>10.0.4')
   s.add_development_dependency('cucumber', "~> 1.1.0")
