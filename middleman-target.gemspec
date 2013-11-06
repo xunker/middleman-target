@@ -47,7 +47,7 @@ spec = Gem::Specification.new do |s|
   # highest_tested_version.
   #
   # the check breaks on rubinius, so we skip it (bad, I know...)
-  if (defined?(RUBY_ENGINE) && RUBY_ENGINE.to_s == "rbx")
+  unless (defined?(RUBY_ENGINE) && RUBY_ENGINE.to_s == "rbx")
 
     current_middleman_version = begin
       Gem::Specification.detect{|g|g.name=='middleman'}.version
