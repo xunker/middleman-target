@@ -35,7 +35,7 @@ spec = Gem::Specification.new do |s|
   
   s.add_dependency("middleman", ">= 3.0")
 
-  if (defined?(RUBY_ENGINE) && RUBY_ENGINE.to_s == "rbx" && RUBY_VERSION >= "2.1.0")
+  if (defined?(RUBY_ENGINE) && RUBY_ENGINE.to_s == "rbx" && RUBY_VERSION >= "2.0.0")
     # for rbx-19mode, needed for the Gem::Specification.detect call below.
     s.add_dependency('rubysl') 
   end
