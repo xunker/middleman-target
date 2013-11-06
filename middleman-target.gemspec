@@ -47,7 +47,7 @@ spec = Gem::Specification.new do |s|
   # highest_tested_version.
   
   current_middleman_version = begin
-    Gem::Specification.all.detect{|g|g.name=='middleman'}.version
+    Gem::Specification.detect{|g|g.name=='middleman'}.version
   rescue NoMethodError
     nil
   end
