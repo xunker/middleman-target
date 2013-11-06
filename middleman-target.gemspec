@@ -3,7 +3,6 @@ require 'rubygems'
 spec = Gem::Specification.new do |s|
   s.name = "middleman-target"
   s.version = "0.0.6"
-  s.date = %q{2013-06-04}
   s.author = "Matthew Nielsen"
   s.email = "xunker@pyxidis.org"
   s.homepage = "https://github.com/xunker/middleman-target"
