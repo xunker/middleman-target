@@ -3,7 +3,7 @@
 
 # Middleman-Target
 
-Middleman-Target is an extension to [MIDDLEMAN] 3.0.x/3.1.x to allow you to specify a build target and generate the content accordingly.
+Middleman-Target is an extension to [MIDDLEMAN] 3.0.x and greater to allow you to specify a build target and generate the content accordingly.
 
 You can use Middleman-Target in your Middleman project to build multiple versions of your source from one source tree.
 
@@ -87,7 +87,7 @@ To build the target of "aardvark" you would run:
 
 # REQUIREMENTS AND INSTALLATION
 
-This new version is for [MIDDLEMAN] 3.0.x and 3.1.x ONLY. For compatibility with Middleman 2.0.x, please see version 0.0.1 of this gem.
+This new version is for [MIDDLEMAN] 3.0.x and greater ONLY. For compatibility with Middleman 2.0.x, please see version 0.0.1 of this gem.
 
 ## Installing in to Middleman tree
 
