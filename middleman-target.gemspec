@@ -35,11 +35,6 @@ spec = Gem::Specification.new do |s|
   
   s.add_dependency("middleman", ">= 3.0")
 
-  if (defined?(RUBY_ENGINE) && RUBY_ENGINE.to_s == "rbx" && RUBY_VERSION >= "2.0.0")
-    # for rbx-19mode, needed for the Gem::Specification.detect call below.
-    s.add_dependency('rubysl') 
-  end
-
   s.add_development_dependency('rake', '~>10.0.4')
   s.add_development_dependency('cucumber', "~> 1.1.0")
   s.add_development_dependency("aruba", "~> 0.4.11")
@@ -50,29 +45,34 @@ spec = Gem::Specification.new do |s|
   # We'll let this work with anything greater than 3.0, but
   # show the user a warning if the version is greater than
   # highest_tested_version.
-  
-  current_middleman_version = begin
-    Gem::Specification.detect{|g|g.name=='middleman'}.version
-  rescue NoMethodError
-    nil
-  end
+  #
+  # the check breaks on rubinius, so we skip it (bad, I know...)
+  if (defined?(RUBY_ENGINE) && RUBY_ENGINE.to_s == "rbx")
 
-  # if current_middleman_version is nil it's because we're doing a
-  # bundle install or some such and we should let it go.
-  if current_middleman_version
+    current_middleman_version = begin
+      Gem::Specification.detect{|g|g.name=='middleman'}.version
+    rescue NoMethodError
+      nil
+    end
 
-    highest_tested_version = Gem::Version.new("3.2.0")
+    # if current_middleman_version is nil it's because we're doing a
+    # bundle install or some such and we should let it go.
+    if current_middleman_version
 
-    if (current_middleman_version > highest_tested_version)
-      s.post_install_message = <<EOF
-Notice: This version of middleman-target has only been tested with
-        middleman 3.2.0 and lower, you are using #{current_middleman_version}. It will probably
-        work just fine, but if it doesn't please file an issue on the
-        Github page at https://github.com/xunker/middleman-target
+      highest_tested_version = Gem::Version.new("3.2.0")
+
+      if (current_middleman_version > highest_tested_version)
+        s.post_install_message = <<EOF
+  Notice: This version of middleman-target has only been tested with
+          middleman 3.2.0 and lower, you are using #{current_middleman_version}. It will probably
+          work just fine, but if it doesn't please file an issue on the
+          Github page at https://github.com/xunker/middleman-target
 
 EOF
 
+      end
     end
+
   end
   
 end
