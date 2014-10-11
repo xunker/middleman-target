@@ -3,9 +3,15 @@
 
 # Middleman-Target
 
-Middleman-Target is an extension to [MIDDLEMAN] 3.0.x and greater to allow you to specify a build target and generate the content accordingly.
+Middleman-Target is an extension to [MIDDLEMAN] 3.0.x and greater to allow
+you to specify a build target and generate the content accordingly.
 
-You can use Middleman-Target in your Middleman project to build multiple versions of your source from one source tree.
+You can use Middleman-Target in your Middleman project to build multiple
+versions of your source from one source tree.
+
+NOTE: This version is for [MIDDLEMAN] >= 3.0.x and Ruby >= 1.9.1. For
+compatibility with Middleman 2.0.x or Ruby 1.8.7, please see version 0.0.1
+of this gem.
 
 # Examples
 
@@ -76,19 +82,6 @@ To build the target of "aardvark" you would run:
 
     MIDDLEMAN_BUILD_TARGET=aardvark middleman build
 
-# TODO:
-
-* repace target.build_targets with something more extensible
-* write rdoc
-* validate the hash passed in to set_build_targets()
-* set build target on the command line as "middleman build TARGET"
-* use app.set instead of always reading ENV for build target
-* not allowed to use a build target from the command line if that build_target if specified as a first-order entry in set_build_targets()
-
-# REQUIREMENTS AND INSTALLATION
-
-This new version is for [MIDDLEMAN] 3.0.x and greater ONLY. For compatibility with Middleman 2.0.x, please see version 0.0.1 of this gem.
-
 ## Installing in to Middleman tree
 
 Add the following near the top of your config.rb:
@@ -104,6 +97,15 @@ To specify a build target map, pass a block in to the "activate" method as:
     end
 
 Please see /examples for a working usage example.
+
+# TODO:
+
+* repace target.build_targets with something more extensible
+* write rdoc
+* validate the hash passed in to set_build_targets()
+* set build target on the command line as "middleman build TARGET"
+* use app.set instead of always reading ENV for build target
+* not allowed to use a build target from the command line if that build_target if specified as a first-order entry in set_build_targets()
 
 # Contributing
 
