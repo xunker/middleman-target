@@ -124,6 +124,3 @@ The middleman-target gem is Copyright 2012-2013 Matthew Nielsen, distributed und
 Thanks to jtwalters@github for patches and motivation to add Middleman 3 compatibility.
 
 [MIDDLEMAN]: https://github.com/middleman/middleman/
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/xunker/middleman-target/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
