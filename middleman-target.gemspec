@@ -8,6 +8,7 @@ spec = Gem::Specification.new do |s|
   s.homepage = "https://github.com/xunker/middleman-target"
   s.summary = "Ability to specify build targets for Middleman projects"
   s.description = "Allows you specify different targets for a middleman build so you can build different versions of a site from the same source tree."
+  s.license = 'MIT'
   s.files = [
     "README.md",
     "examples/config.rb", "examples/source/index.html.erb",
