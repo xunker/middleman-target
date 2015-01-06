@@ -2,7 +2,7 @@ require 'rubygems'
 
 spec = Gem::Specification.new do |s|
   s.name = "middleman-target"
-  s.version = "0.0.6"
+  s.version = "0.0.7"
   s.author = "Matthew Nielsen"
   s.email = "xunker@pyxidis.org"
   s.homepage = "https://github.com/xunker/middleman-target"
@@ -57,7 +57,7 @@ spec = Gem::Specification.new do |s|
   # bundle install or some such and we should let it go.
   if current_middleman_version
 
-    highest_tested_version = Gem::Version.new("3.2.0")
+    highest_tested_version = Gem::Version.new("3.3.7")
 
     if (current_middleman_version > highest_tested_version)
       s.post_install_message = <<EOF
