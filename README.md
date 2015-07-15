@@ -17,10 +17,10 @@ Middleman-Target is used to build different versions of in your Middleman projec
 
 I created Middleman-Target when I was creating a Phonegap/Cordova app and wanted to use the same HTML code base for both iOS and Android and the web. I needed an easy way to say:
 
-* If I'm on iOS, do this.
-* If I'm on Android, do this.
-* If I'm inside Phonegap (iOS or Android) do this.
-* If I'm running as a real mobile web site in a real browser, do this.
+* If I'm inside Phonegap on iOS, do this.
+* If I'm inside Phonegap on Android, do this.
+* If I'm inside Phonegap on iOS or Android do this.
+* If I'm running as a real mobile web site in a real browser (not in Phonegap), do this.
 
 I created the gem to handle cases like that. Then you can specify a target and middleman will build your project according to that target.
 
