@@ -140,9 +140,13 @@ The Cucumber features for this project assume the gem is installed, so to make a
 
 # Changes
 
+0.0.8 July 15, 2015
+  * Tested with middleman 3.3.12, changed post-install warning to reflect this.
+  * Fixes [issue 11](https://github.com/xunker/middleman-target/issues/11).
+
 0.0.7
   * Tested with middleman 3.3.7, changed post-install warning to reflect this.
-  * Fixes https://github.com/xunker/middleman-target/issues/12
+  * Fixes [issue 12[(https://github.com/xunker/middleman-target/issues/12).
 
 0.0.6
   * Removed maximal middleman version requirement. If the version of middleman
