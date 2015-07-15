@@ -7,14 +7,22 @@
 Middleman-Target is an extension to [MIDDLEMAN] 3.x.x and greater to allow
 you to specify a build target and generate the content accordingly.
 
-You can use Middleman-Target in your Middleman project to build multiple
-versions of your source from one source tree. This is especially useful for
-Phonegap/Cordova, so you can use one source tree to build apps for different
-platforms.
-
 NOTE: This version is for [MIDDLEMAN] >= 3.x.x and Ruby >= 1.9.1. For
 compatibility with Middleman 2.x.x or Ruby 1.8.7, please see version 0.0.1
 of this gem.
+
+## What you use it for
+
+Middleman-Target is used to build different versions of in your Middleman project depending on the target you specify.
+
+I created Middleman-Target when I was creating a Phonegap/Cordova app and wanted to use the same HTML code base for both iOS and Android and the web. I needed an easy way to say:
+
+* If I'm on iOS, do this.
+* If I'm on Android, do this.
+* If I'm inside Phonegap (iOS or Android) do this.
+* If I'm running as a real mobile web site in a real browser, do this.
+
+I created the gem to handle cases like that. Then you can specify a target and middleman will build your project according to that target.
 
 # Examples
 
@@ -24,26 +32,26 @@ ERB code:
 
     <p>
       <%# NOTE: target?() is a shorthand alias for build_target_is?() %>
-      <% if build_target_is?(:foo) %>
-        Foo specific stuff.
-      <% elsif target?(:bar) %>
-        Bar specific stuff.
+      <% if build_target_is?(:ios) %>
+        iOS specific stuff.
+      <% elsif target?(:android) %>
+        Android specific stuff.
       <% else %>
         The build target <%= build_target %> has no special needs.
       <% end %>
     </p>
 
-Output when run with a build target of 'foo':
+Output when run with a build target of 'ios':
 
-    Foo specific stuff.
+    iOS specific stuff.
 
-..'bar':
+..'Android':
 
-    Bar specific stuff.
+    Android specific stuff.
 
-..anything else ('baz' in this case):
+..anything else ('blackberry' in this case):
 
-    The build target baz has no special needs.
+    The build target blackberry has no special needs.
 
 ## Less simple using build target maps:
 
